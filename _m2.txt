@@ -1,0 +1,9 @@
+940fdc4dfb49dae92dfdb3d3cdbd81cd *摆件坐标表.html
+b1ccf290332c502dd64c50a543f9c575 *连线卡.html
+4fab62f95727b8d329479be0d69b3c2c *netlist.json
+f8a7b08d5fb875a965ad9eea022ccbe0 *placement.json
+fa4921452da81b4db6b0657bec91ac70 *shots/01-top.png
+4e131debd7c8c140ad5ce3c9da07ca2a *shots/02-bottom.png
+1c9cbbcb872832c67b92d965d95674d5 *shots/03-copper.png
+a8b5837f91a9871df72d136b27fb3307 *shots/04-silkscreen.png
+741c0257ae7be88b0ba2a9fce3c1914a *shots/05-annotated.png

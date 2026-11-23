@@ -66,7 +66,7 @@ def main():
     json.dump(
         {"nets": {k: [f"{a}.{b}" for a, b in v] for k, v in nets.items()},
          "pin2net": {k: v for k, v in pin2net.items()}},
-        open(OUT_JSON, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        open(OUT_JSON, "w", encoding="utf-8", newline="\n"), ensure_ascii=False, indent=1)
 
     # 按位号组织的“每个脚打什么标签”
     by_ref = defaultdict(list)
@@ -141,7 +141,7 @@ code{{background:#f4f4f4;padding:0 3px;border-radius:2px;font-size:11.5px}}
 <div class="warn"><b>LED 那三根别漏</b>：+5V 经 R2/R3/R4 到 LED 阳极，LED 阴极才接 OUT1/2/3。
 对应网络 <code>LED1_A / LED2_A / LED3_A</code> —— 这三根最容易画成"LED 直接挂 5V"。</div>
 </body></html>"""
-    open(OUT_HTML, "w", encoding="utf-8").write(html)
+    open(OUT_HTML, "w", encoding="utf-8", newline="\n").write(html)
     print("写出:", OUT_JSON)
     print("写出:", OUT_HTML)
     return 0 if not (miss or dup or extra) else 1

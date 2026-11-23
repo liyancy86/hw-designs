@@ -427,10 +427,10 @@ $ python tools/verify_placement.py
 
 ```console
 $ md5sum *.html *.json shots/*.png                       # 重建前（9 项）
-bed6c336d87b7723595f109fd02691d2  placement.json
-e7b2f91c65f6596f2a06a25c876e9d68  netlist.json
-0cefde4ce7b500fc6be4d48d89f15a97  摆件坐标表.html
-f7260d6473d3fa1132b4fd8d766b0846  连线卡.html
+940fdc4dfb49dae92dfdb3d3cdbd81cd  摆件坐标表.html
+b1ccf290332c502dd64c50a543f9c575  连线卡.html
+f8a7b08d5fb875a965ad9eea022ccbe0  placement.json
+4fab62f95727b8d329479be0d69b3c2c  netlist.json
 fa4921452da81b4db6b0657bec91ac70  shots/01-top.png
 4e131debd7c8c140ad5ce3c9da07ca2a  shots/02-bottom.png
 1c9cbbcb872832c67b92d965d95674d5  shots/03-copper.png
@@ -447,15 +447,24 @@ $ cd pcb-alcohol && md5sum *.html *.json shots/*.png      # 重建后，9 项同
 
 九项逐字节一致，连 PNG 的字节都没变。
 
+**这里原本有个坑，本轮才发现并修掉：** 两个脚本原来用
+`open(path, "w", encoding="utf-8")` 写文件，Windows 上默认把 `\n` 转成 `\r\n`，
+Linux 上不转 —— 也就是说**同一个输入在两台机器上产出的字节不同**，
+上表这九行只要换平台就全废，"确定性"这个结论只在 Windows 上成立。
+现在三处写入都显式带了 `newline="\n"`，产物统一是 LF，
+和仓库 `.gitattributes` 里的 `eol=lf` 也对上了（之前 git 一直在把 CRLF 改写成 LF 入库，
+意味着**从干净克隆出来的文件哈希和上表不一样**）。修完之后两者一致，可复现。
+
 **这能说明什么、不能说明什么：**
 
 | 能说明 | 不能说明 |
 |---|---|
-| 在这台机器、这套 numpy / Pillow / 字体版本下，同样的输入得到同样的输出 | **不是"纯函数"**。同一环境两次结果相同，只能证明这次实验可重复，推不出无隐藏依赖或跨环境确定性 |
+| 在这套 numpy / Pillow / 字体版本下，同样的输入得到同样的输出，**跨平台也不变** | **不是"纯函数"**。同一环境两次结果相同，只能证明这次实验可重复，推不出无隐藏依赖 |
 | 这两个脚本没有随机种子、时间戳、字典序之类的隐藏变量 | 不能说明"参数是认真选的"—— 手工调到满意为止的参数一样能确定性生成 |
 
 依赖版本这轮才补上（仓库根 `requirements.txt`，写明实测跑通的 `numpy` / `Pillow` 版本）。
-换版本大概率能跑，但上面这九个哈希不保证复现。
+字体版本尚未锁定 —— `摆件坐标表.html` 和 `连线卡.html` 不含字体渲染，
+但 `annotate_board.py` 若换成别的字体渲染文字，PNG 就会变。
 
 ### 6.2 哪些能重建，哪些不能
 

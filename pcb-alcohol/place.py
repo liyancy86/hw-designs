@@ -150,10 +150,10 @@ td.note{{color:#555;font-size:11.5px}}
 <div class=sub style="margin-top:10px">安装孔：(5,5) (75,5) (5,35) (75,35)，Ø3.00，用过孔放置。板框 80.00×40.00 闭合。</div>
 </body></html>"""
     out = os.path.join(HERE, "摆件坐标表.html")
-    open(out, "w", encoding="utf-8").write(html)
+    open(out, "w", encoding="utf-8", newline="\n").write(html)
     json.dump({r: {"x": P[r][0], "y": P[r][1], "w": P[r][2], "h": P[r][3]} for r in refs},
               open(os.path.join(HERE, "placement.json"), "w",
-                   encoding="utf-8"), ensure_ascii=False, indent=1)
+                   encoding="utf-8", newline="\n"), ensure_ascii=False, indent=1)
     print("写出:", out)
     return 0 if not errs else 1
 
