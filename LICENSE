@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Yancy
+Copyright (c) 2026 Xueyu Li (Yancy)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,18 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Note on third-party content:
-
-  This license covers the scripts and documentation in this repository.
-
-  It does NOT cover:
-    - servo-assembly/step/* containing Robonine gripper parts  -> CERN-OHL-P-2.0
-    - servo-assembly/step/* containing SO-101 jaw parts        -> Apache-2.0
-    - servo-assembly/step/* vendor servo and bracket models    -> vendor supplied, no license declared
-    - pcb-alcohol/datasheets/*                                  -> respective manufacturers
-    - pcb-alcohol/docs/* competition-related requirements        -> the competition organizer
-
-  See the README of each sub-project for the per-item breakdown.
