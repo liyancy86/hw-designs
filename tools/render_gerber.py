@@ -27,7 +27,7 @@
 
 用法：
     python tools/render_gerber.py --gerber pcb-alcohol/gerber --out pcb-alcohol/shots
-    python tools/render_gerber.py --gerber pcb-alcohol/gerber --out /tmp/x --ppi 40 --ss 6
+    python tools/render_gerber.py --gerber pcb-alcohol/gerber --out /tmp/x --px-per-mm 40 --ss 6
 """
 
 from __future__ import annotations
@@ -308,11 +308,11 @@ class Raster:
     ss = 超采样倍数。所有绘制在 ss 倍画布上做，最后 LANCZOS 缩回去当抗锯齿。
     """
 
-    def __init__(self, bbox, ppi: float = 30.0, ss: int = 4, pad_mm: float = 1.0):
+    def __init__(self, bbox, px_per_mm: float = 30.0, ss: int = 4, pad_mm: float = 1.0):
         x0, y0, x1, y1 = bbox
         self.x0, self.y0 = x0 - pad_mm, y0 - pad_mm
         self.x1, self.y1 = x1 + pad_mm, y1 + pad_mm
-        self.ppm = ppi * ss
+        self.ppm = px_per_mm * ss
         self.ss = ss
         self.w = int(round((self.x1 - self.x0) * self.ppm))
         self.h = int(round((self.y1 - self.y0) * self.ppm))
@@ -413,13 +413,13 @@ def _trace_ring(layer: GerberLayer):
     return None
 
 
-def board_fill_mask(layer: GerberLayer, bbox, ppi: float, ss: int) -> np.ndarray:
+def board_fill_mask(layer: GerberLayer, bbox, px_per_mm: float, ss: int) -> np.ndarray:
     """得到「板内」的实心掩膜，用来做外形裁切。
 
     优先把板框线段串成闭合多边形直接填充（O(n)，毫秒级）。串不起来才退到
     从画布中心做 floodfill —— 那个在超采样画布上要跑两分钟，只能当兜底。
     """
-    r = Raster(bbox, ppi=ppi, ss=ss)
+    r = Raster(bbox, px_per_mm=px_per_mm, ss=ss)
     ring = _trace_ring(layer)
     if ring and len(ring) >= 3:
         r.draw.polygon([r._t(x, y) for x, y in ring], fill=255)
@@ -534,7 +534,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Gerber / Excellon → PNG 预览图")
     ap.add_argument("--gerber", required=True, help="Gerber 文件所在目录")
     ap.add_argument("--out", required=True, help="PNG 输出目录")
-    ap.add_argument("--ppi", type=float, default=30.0, help="每毫米像素数（默认 30）")
+    ap.add_argument("--px-per-mm", "--ppi", dest="px_per_mm", type=float, default=30.0,
+                    help="每毫米像素数（默认 30）。--ppi 是旧名，保留兼容；注意 PPI 本义是每英寸像素数，30 px/mm = 762 PPI")
     ap.add_argument("--ss", type=int, default=4, help="超采样倍数（默认 4）")
     ap.add_argument("--name", default="", help="输出文件名前缀")
     args = ap.parse_args()
@@ -565,7 +566,7 @@ def main() -> int:
 
     # 一层一个 Raster（共用同一套变换，才能对齐）
     def new_raster():
-        return Raster(bbox, ppi=args.ppi, ss=args.ss)
+        return Raster(bbox, px_per_mm=args.px_per_mm, ss=args.ss)
 
     layers = {}
     for key in ("top", "bottom", "silk_top", "silk_bot", "mask_top", "mask_bot", "outline"):
@@ -615,11 +616,11 @@ def main() -> int:
 
     # 板框掩膜 —— 填充出「板内」实心区域，用来做外形裁切
     if outline:
-        outline_m = board_fill_mask(outline, bbox, args.ppi, args.ss)
+        outline_m = board_fill_mask(outline, bbox, args.px_per_mm, args.ss)
     else:
         outline_m = np.ones((H, W), dtype=np.float32)
 
-    print(f"\n=== 输出 === 画布 {W} × {H} px @ {args.ppi} px/mm, 超采样 {args.ss}×")
+    print(f"\n=== 输出 === 画布 {W} × {H} px @ {args.px_per_mm} px/mm, 超采样 {args.ss}×")
 
     # --- 01 顶面 ---
     img_top = compose_side(top, mask_t if mask_t is not None else z,
