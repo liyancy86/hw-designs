@@ -1,0 +1,25 @@
+﻿编号,名称,分组,尺寸X_SW,尺寸Y_SW,尺寸Z_SW,放置X_SW,放置Y_SW,放置Z_SW,尺寸X_Blender,尺寸Y_Blender,尺寸Z_Blender,放置X_Blender,放置Y_Blender,放置Z_Blender,三角面数,来源方式,STEP文件,SLDPRT文件
+01_servo_sts3215,舵机_STS3215_含舵盘,1_舵机与座,45.4,39.6,24.8,-262.1,19.8,-261.0,45.4,24.8,39.6,-262.1,261.0,19.8,22392,"STEP源(真B-rep,roots=1)",01_servo_sts3215.step,01_servo_sts3215.SLDPRT
+02_holder_base,舵机座_U型_Base,1_舵机与座,28.0,55.08,38.097,-193.4,27.5,-254.3,28.0,38.1,55.08,-193.4,254.3,27.5,19796,"STEP源(真B-rep,roots=1)",02_holder_base.step,02_holder_base.SLDPRT
+03_holder_wrist,舵机座_U型_Wrist,1_舵机与座,28.0,56.391,36.9,-133.4,28.2,-255.0,28.0,36.9,56.39,-133.4,255.0,28.2,16498,"STEP源(真B-rep,roots=1)",03_holder_wrist.step,03_holder_wrist.SLDPRT
+04_holder_L,底座_L型,1_舵机与座,47.648,80.2,31.4,-63.6,40.1,-257.7,47.65,31.4,80.2,-63.6,257.7,40.1,22040,"STEP源(真B-rep,roots=1)",04_holder_L.step,04_holder_L.SLDPRT
+05_holder_motor1,舵机座_SO100老款,1_舵机与座,44.7,80.2,31.4,14.6,40.1,-257.7,44.7,31.4,80.2,14.6,257.7,40.1,18428,"STEP源(真B-rep,roots=1)",05_holder_motor1.step,05_holder_motor1.SLDPRT
+06_plate_waveshare,安装板_WaveShare,1_舵机与座,51.0,7.6,42.0,94.5,3.8,-252.4,51.0,42.0,7.6,94.5,252.4,3.8,1440,"STEP源(真B-rep,roots=1)",06_plate_waveshare.step,06_plate_waveshare.SLDPRT
+07_plate_seeed,安装板_Seeed,1_舵机与座,51.0,7.6,42.0,177.4,3.8,-252.4,51.0,42.0,7.6,177.4,252.4,3.8,3088,"STEP源(真B-rep,roots=1)",07_plate_seeed.step,07_plate_seeed.SLDPRT
+08_bracket_U_deep,U支架_大U深腿,4_U型支架,21.1,40.5,30.6,-274.2,20.2,78.4,21.1,30.6,40.5,-274.2,-78.4,20.2,5296,OBJ三角化(5296 tri),08_bracket_U_deep.step,08_bracket_U_deep.SLDPRT
+09_bracket_U_wide_flat,U支架_宽扁U浅腿,4_U型支架,30.3,35.5,12.0,-216.6,17.8,69.1,30.3,12.0,35.5,-216.6,-69.1,17.8,5296,OBJ三角化(5296 tri),09_bracket_U_wide_flat.step,09_bracket_U_wide_flat.SLDPRT
+10_bracket_U_mid_unequal,U支架_中U不等腿,4_U型支架,25.1,35.2,16.0,-156.8,17.6,71.1,25.1,16.0,35.2,-156.8,-71.1,17.6,4616,OBJ三角化(4616 tri),10_bracket_U_mid_unequal.step,10_bracket_U_mid_unequal.SLDPRT
+11_tube_al_L120,铝杆_M3D7_长120,5_铝杆,120.0,7.0,7.0,-224.8,3.5,129.2,120.0,7.0,7.0,-224.8,-129.2,3.5,672,OBJ三角化(672 tri),11_tube_al_L120.step,11_tube_al_L120.SLDPRT
+12_tube_al_L80,铝杆_M3D7_长80,5_铝杆,80.0,7.0,7.0,-92.8,3.5,129.2,80.0,7.0,7.0,-92.8,-129.2,3.5,672,OBJ三角化(672 tri),12_tube_al_L80.step,12_tube_al_L80.SLDPRT
+13_jaw_moving,夹爪B_活动爪,3_夹爪B,22.3,48.0,92.0,-273.7,24.0,-15.0,22.29,92.0,48.0,-273.7,15.0,24.0,24728,"STEP源(真B-rep,roots=1)",13_jaw_moving.step,13_jaw_moving.SLDPRT
+14_jaw_wrist,夹爪B_腕部定爪,3_夹爪B,65.2,105.425,52.0,-197.9,52.7,-34.9,65.2,52.0,105.43,-197.9,34.9,52.7,29170,"STEP源(真B-rep,roots=1)",14_jaw_wrist.step,14_jaw_wrist.SLDPRT
+15_gripper_A_asm,夹爪A_整机参考,6_夹爪A整机,128.0,130.5,108.755,-220.8,65.2,219.0,128.0,108.76,130.5,-220.8,-219.0,65.2,224880,"STEP源(真B-rep,roots=1)",15_gripper_A_asm.step,15_gripper_A_asm.SLDPRT
+16_gA_main_frame,夹爪A_主框架,2_夹爪A平行夹爪,128.0,24.0,59.5,-220.8,12.0,-169.6,128.0,59.5,24.0,-220.8,169.6,12.0,1804,STL缝合(1804 tri),16_gA_main_frame.step,16_gA_main_frame.SLDPRT
+17_gA_clamp_D6,夹爪A_夹指_D6.0,2_夹爪A平行夹爪,46.0,16.0,80.0,-101.8,8.0,-159.4,46.0,80.0,16.0,-101.8,159.4,8.0,1468,STL缝合(1468 tri),17_gA_clamp_D6.step,17_gA_clamp_D6.SLDPRT
+18_gA_gear_rack,夹爪A_齿条,2_夹爪A平行夹爪,4.5,61.0,9.35,-44.6,30.5,-194.7,4.5,9.35,61.0,-44.6,194.7,30.5,470,STL缝合(470 tri),18_gA_gear_rack.step,18_gA_gear_rack.SLDPRT
+19_gA_gear,夹爪A_齿轮,2_夹爪A平行夹爪,8.001,20.0,19.932,-6.3,10.0,-189.4,8.0,19.93,20.0,-6.3,189.4,10.0,1114,STL缝合(1114 tri),19_gA_gear.step,19_gA_gear.SLDPRT
+20_gA_servo_holder,夹爪A_舵机座,2_夹爪A平行夹爪,17.0,37.0,48.0,38.2,18.5,-175.4,17.0,48.0,37.0,38.2,175.4,18.5,1650,STL缝合(1650 tri),20_gA_servo_holder.step,20_gA_servo_holder.SLDPRT
+21_gA_nail,夹爪A_销钉,2_夹爪A平行夹爪,4.2,9.0,5.0,80.8,4.5,-196.9,4.2,5.0,9.0,80.8,196.9,4.5,52,STL缝合(52 tri),21_gA_nail.step,21_gA_nail.SLDPRT
+22_gA_camera_holder,夹爪A_摄像头座_可选,2_夹爪A平行夹爪,39.562,52.0,96.453,134.7,26.0,-151.2,39.56,96.45,52.0,134.7,151.2,26.0,2902,STL缝合(2902 tri),22_gA_camera_holder.step,22_gA_camera_holder.SLDPRT
+23_gA_camera_spacer,夹爪A_摄像头垫块_可选,2_夹爪A平行夹爪,38.0,2.0,38.0,205.5,1.0,-180.4,38.0,38.0,2.0,205.5,180.4,1.0,824,STL缝合(824 tri),23_gA_camera_spacer.step,23_gA_camera_spacer.SLDPRT
+24_gA_d405_holder,夹爪A_D405座_可选,2_夹爪A平行夹爪,28.397,53.0,106.453,270.7,26.5,-146.2,28.4,106.45,53.0,270.7,146.2,26.5,5360,STL缝合(5360 tri),24_gA_d405_holder.step,24_gA_d405_holder.SLDPRT

@@ -1,0 +1,24 @@
+* text=auto eol=lf
+
+# 图像与 CAD：原样保存，不做换行转换
+*.png  binary
+*.pdf  binary
+*.PDF  binary
+*.step binary
+*.stp  binary
+*.SLDPRT binary
+*.SLDASM binary
+
+# 制造文件：文本格式，但换行符是格式的一部分，禁止 git 改写
+*.DRL binary
+*.GKO binary
+*.GTL binary
+*.GBL binary
+*.GTO binary
+*.GBO binary
+*.GTS binary
+*.GBS binary
+*.GTP binary
+*.GBP binary
+*.GDL binary
+*.GDD binary

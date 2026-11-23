@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.tmp
+
+# 渲染与调试图不重复入库：正式产物在 shots/ 下，临时文件以下划线开头
+_*.png
+debug_*.png
+out/
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

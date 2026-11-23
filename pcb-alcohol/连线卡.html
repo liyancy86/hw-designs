@@ -1,0 +1,56 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>酒精检测板 · 连线卡</title>
+<style>
+:root{--ink:#1a1a1a;--line:#c9c9c9;--hi:#b3261e;--bg:#fff}
+*{box-sizing:border-box}
+body{margin:0;padding:14px 18px;font:13px/1.45 "Segoe UI","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg)}
+h1{font-size:17px;margin:0 0 2px}
+.sub{color:#666;font-size:11.5px;margin-bottom:10px}
+table{border-collapse:collapse;width:100%;margin:0 0 10px}
+th,td{border:1px solid var(--line);padding:3px 6px;vertical-align:middle}
+th{background:#f3f3f3;font-size:11px;text-align:left;font-weight:600}
+td.r{font-weight:700;width:44px;white-space:nowrap}
+td.n{color:#666;font-size:11.5px;width:74px;white-space:nowrap}
+.p{display:inline-block;margin:1px 4px 1px 0;padding:1px 5px;border-radius:3px;background:#f6f6f6;border:1px solid #e2e2e2;font-size:12px}
+.p b{color:var(--hi);margin-right:3px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.box{border:1px solid var(--line);border-radius:4px;padding:8px 10px}
+.box h2{font-size:12.5px;margin:0 0 5px}
+ol,ul{margin:0;padding-left:17px}
+li{margin:1.5px 0}
+code{background:#f4f4f4;padding:0 3px;border-radius:2px;font-size:11.5px}
+.warn{border-left:3px solid var(--hi);background:#fdf3f2;padding:6px 9px;margin:6px 0;font-size:12px}
+@media print{body{padding:6px 10px} .grid{grid-template-columns:1fr 1fr}}
+</style></head><body>
+<h1>酒精检测板 · 引脚连线卡（网络标签法）</h1>
+<div class="sub">共 15 个网络 / 82 个引脚，每个引脚都恰好归属一个网络（已程序校验：无漏接、无跨网短路）。
+画原理图时：放好器件后，在每个引脚处放<b>网络标签</b>，同名标签自动连通 —— 不用画长线。</div>
+
+<table>
+<tr><th>位号</th><th>器件</th><th>引脚 → 该打的网络标签</th></tr>
+<tr><td class="r">J1</td><td class="n">Type-C 2P</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>GND</span><span class="p"><b>3</b>GND</span><span class="p"><b>4</b>GND</span></td></tr><tr><td class="r">J2</td><td class="n">XH2.54-5P</td><td><span class="p"><b>1</b>GND</span><span class="p"><b>2</b>AOUT</span><span class="p"><b>3</b>OUT1</span><span class="p"><b>4</b>OUT2</span><span class="p"><b>5</b>OUT3</span></td></tr><tr><td class="r">U1</td><td class="n">LM393</td><td><span class="p"><b>1</b>OUT1</span><span class="p"><b>2</b>AOUT</span><span class="p"><b>3</b>VREF1</span><span class="p"><b>4</b>GND</span><span class="p"><b>5</b>VREF2</span><span class="p"><b>6</b>AOUT</span><span class="p"><b>7</b>OUT2</span><span class="p"><b>8</b>+5V</span></td></tr><tr><td class="r">U2</td><td class="n">LM393</td><td><span class="p"><b>1</b>OUT3</span><span class="p"><b>2</b>AOUT</span><span class="p"><b>3</b>VREF3</span><span class="p"><b>4</b>GND</span><span class="p"><b>5</b>AOUT</span><span class="p"><b>6</b>VREF3</span><span class="p"><b>7</b>BUZ_DRV</span><span class="p"><b>8</b>+5V</span></td></tr><tr><td class="r">MQ1</td><td class="n">MQ-3</td><td><span class="p"><b>1</b>AOUT</span><span class="p"><b>2</b>+5V</span><span class="p"><b>3</b>AOUT</span><span class="p"><b>4</b>+5V</span><span class="p"><b>5</b>GND</span><span class="p"><b>6</b>+5V</span></td></tr><tr><td class="r">Q1</td><td class="n">S8050</td><td><span class="p"><b>1</b>Q1_B</span><span class="p"><b>2</b>GND</span><span class="p"><b>3</b>BUZ_N</span></td></tr><tr><td class="r">BZ1</td><td class="n">蜂鸣器</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>BUZ_N</span></td></tr><tr><td class="r">D1</td><td class="n">LED</td><td><span class="p"><b>A</b>LED1_A</span><span class="p"><b>K</b>OUT1</span></td></tr><tr><td class="r">D2</td><td class="n">LED</td><td><span class="p"><b>A</b>LED2_A</span><span class="p"><b>K</b>OUT2</span></td></tr><tr><td class="r">D3</td><td class="n">LED</td><td><span class="p"><b>A</b>LED3_A</span><span class="p"><b>K</b>OUT3</span></td></tr><tr><td class="r">R1</td><td class="n">电阻</td><td><span class="p"><b>1</b>AOUT</span><span class="p"><b>2</b>GND</span></td></tr><tr><td class="r">R2</td><td class="n">电阻</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>LED1_A</span></td></tr><tr><td class="r">R3</td><td class="n">电阻</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>LED2_A</span></td></tr><tr><td class="r">R4</td><td class="n">电阻</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>LED3_A</span></td></tr><tr><td class="r">R5</td><td class="n">电阻</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>VREF1</span></td></tr><tr><td class="r">R6</td><td class="n">电阻</td><td><span class="p"><b>1</b>VREF1</span><span class="p"><b>2</b>GND</span></td></tr><tr><td class="r">R7</td><td class="n">电阻</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>VREF2</span></td></tr><tr><td class="r">R8</td><td class="n">电阻</td><td><span class="p"><b>1</b>VREF2</span><span class="p"><b>2</b>GND</span></td></tr><tr><td class="r">R9</td><td class="n">电阻</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>VREF3</span></td></tr><tr><td class="r">R10</td><td class="n">电阻</td><td><span class="p"><b>1</b>VREF3</span><span class="p"><b>2</b>GND</span></td></tr><tr><td class="r">R11</td><td class="n">电阻</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>OUT1</span></td></tr><tr><td class="r">R12</td><td class="n">电阻</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>OUT2</span></td></tr><tr><td class="r">R13</td><td class="n">电阻</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>OUT3</span></td></tr><tr><td class="r">R14</td><td class="n">电阻</td><td><span class="p"><b>1</b>BUZ_DRV</span><span class="p"><b>2</b>Q1_B</span></td></tr><tr><td class="r">R15</td><td class="n">电阻</td><td><span class="p"><b>1</b>Q1_B</span><span class="p"><b>2</b>GND</span></td></tr><tr><td class="r">C1</td><td class="n">电容</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>GND</span></td></tr><tr><td class="r">C2</td><td class="n">电容</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>GND</span></td></tr><tr><td class="r">C3</td><td class="n">电容</td><td><span class="p"><b>1</b>+5V</span><span class="p"><b>2</b>GND</span></td></tr><tr><td class="r">C4</td><td class="n">电容</td><td><span class="p"><b>1</b>AOUT</span><span class="p"><b>2</b>GND</span></td></tr><tr><td class="r">C5</td><td class="n">电容</td><td><span class="p"><b>1</b>VREF3</span><span class="p"><b>2</b>GND</span></td></tr>
+</table>
+
+<div class="grid">
+<div class="box">
+<h2>四步走（顺序别换）</h2>
+<ol>
+<li>放 30 个器件（先摆 J1/J2/U1/U2/MQ1/Q1/BZ1，再摆 R/C）</li>
+<li>按上表给每个脚打网络标签（约 82 个标签）</li>
+<li>设计 → 原理图转 PCB</li>
+<li>按坐标摆件 → 布线 → 导出 Gerber</li>
+</ol>
+</div>
+<div class="box">
+<h2>三个必查（画完盯一眼）</h2>
+<ul>
+<li>BZ1.2 接 <code>BUZ_N</code>（Q1 集电极），<b>不是 GND</b></li>
+<li>MQ1.2 接 +5V、MQ1.5 接 GND（加热脚）</li>
+<li>三路输出都要有 10K 上拉到 +5V（R11/R12/R13）</li>
+</ul>
+</div>
+</div>
+
+<div class="warn"><b>LED 那三根别漏</b>：+5V 经 R2/R3/R4 到 LED 阳极，LED 阴极才接 OUT1/2/3。
+对应网络 <code>LED1_A / LED2_A / LED3_A</code> —— 这三根最容易画成"LED 直接挂 5V"。</div>
+</body></html>
